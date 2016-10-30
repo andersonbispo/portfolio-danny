@@ -20,7 +20,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="{{ url_for('static', filename='css/grayscale.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/grayscale.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/elastic-grid/css/elastic_grid.min.css') }}" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +55,7 @@
                         <a class="page-scroll" href="#about">Sobre</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/projeto_um">Projetos</a>
+                        <a class="page-scroll" href="/projetos">Projetos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contato</a>
@@ -102,11 +104,17 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+    <script src="{{ url_for('static', filename='vendor/elastic-grid/js/modernizr.custom.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/elastic-grid/js/classie.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/elastic-grid/js/elastic_grid.min.js') }}" type="text/javascript"></script>
+
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Theme JavaScript -->
     <script src="{{ url_for('static', filename='js/grayscale.min.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
 
 </body>
 

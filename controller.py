@@ -9,6 +9,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/projeto_um')
-def project_one():
-    return render_template('project_one.html')
+@app.route('/projetos')
+def projects():
+    return render_template('projects.html')

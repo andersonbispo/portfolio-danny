@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div id="projects_grid"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+    $(function(){
+        $("#projects_grid").elastic_grid({
+            'showAllText' : 'All',
+            'items' :
+            [
+                {
+                    'title'         : 'Title #1',
+                    'description'   : ' Description text here',
+                    'thumbnail'     : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/1.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/2.jpg") }}'
+                    ],
+                    'large'         : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/1.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/2.jpg") }}'
+                    ],
+                    'tags'          : ['Portrait'],
+                    'button_list'   : []
+                },
+                {
+                    'title'         : 'Title #2',
+                    'description'   : 'Description text here',
+                    'thumbnail'     : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/4.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/5.jpg") }}'
+                    ],
+                    'large'         : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/4.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/5.jpg") }}'
+                    ],
+                    'tags'          : ['Vintage'],
+                    'button_list'   : []
+                },                {
+                    'title'         : 'Title #3',
+                    'description'   : 'Description text here',
+                    'thumbnail'     : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/15.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/small/2.jpg") }}'
+                    ],
+                    'large'         : [
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/15.jpg") }}', 
+                        '{{ url_for("static", filename="vendor/elastic-grid/images/large/2.jpg") }}'
+                    ],
+                    'tags'          : ['BW'],
+                    'button_list'   : []
+                }
+
+            ]
+        });
+    });
+</script>
+{% endblock %}
